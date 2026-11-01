@@ -1,0 +1,52 @@
+{
+  "name": "smartlens-ai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SmartLens AI - Scan Anything. Understand Everything. Discover What to Do Next.",
+  "type": "module",
+  "main": "server.js",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "db:migrate": "node database/migrate.js",
+    "db:seed": "node database/seed.js",
+    "db:setup": "node database/migrate.js && node database/seed.js",
+    "db:reset": "node database/reset.js --yes",
+    "retention": "node scripts/retention.js",
+    "retention:dry": "node scripts/retention.js --dry-run",
+    "vendor": "node scripts/vendor.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1161.0",
+    "bcryptjs": "^3.0.3",
+    "bootstrap": "^5.3.8",
+    "bootstrap-icons": "^1.13.2",
+    "compression": "^1.8.2",
+    "cookie-parser": "^1.4.7",
+    "cropperjs": "^1.6.2",
+    "dotenv": "^16.6.1",
+    "express": "^5.3.0",
+    "express-rate-limit": "^7.5.1",
+    "helmet": "^8.3.0",
+    "jspdf": "^4.2.1",
+    "multer": "^2.5.0",
+    "mysql2": "^3.24.6",
+    "pino": "^9.14.0",
+    "pino-http": "^10.5.0",
+    "sharp": "^0.35.5",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "cross-env": "^7.0.3",
+    "pino-pretty": "^13.2.0",
+    "supertest": "^7.3.1",
+    "vitest": "^3.2.7"
+  }
+}

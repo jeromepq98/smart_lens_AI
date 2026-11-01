@@ -1,0 +1,17 @@
+node_modules/
+.env
+.env.*
+!.env.example
+uploads/*
+!uploads/.gitkeep
+logs/*
+!logs/.gitkeep
+coverage/
+test-results/
+playwright-report/
+blob-report/
+.vscode/
+.idea/
+*.log
+.DS_Store
+Thumbs.db

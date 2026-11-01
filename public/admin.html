@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#0f9d76" />
+    <title>SmartLens AI · Administrator</title>
+    <link rel="icon" href="/assets/icons/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="icon" href="/assets/icons/icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/assets/vendor/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/admin.css" />
+  </head>
+  <body class="admin-body">
+    <a class="skip-link" href="#adminApp">Skip to main content</a>
+
+    <div id="adminApp" class="admin-app" tabindex="-1">
+      <div class="boot-loader" aria-live="polite">
+        <div class="boot-logo"><img src="/assets/icons/icon.svg" alt="" width="56" height="56" /></div>
+        <p>Loading administrator console…</p>
+      </div>
+    </div>
+
+    <div id="toastStack" class="toast-stack" aria-live="polite" aria-atomic="false"></div>
+    <div id="modalRoot"></div>
+
+    <noscript>
+      <div class="container py-5">
+        <div class="alert alert-warning">The administrator console needs JavaScript enabled.</div>
+      </div>
+    </noscript>
+
+    <script type="module" src="/js/admin.js"></script>
+  </body>
+</html>

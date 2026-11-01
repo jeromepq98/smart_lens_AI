@@ -1,0 +1,50 @@
+{
+  "name": "SmartLens AI",
+  "short_name": "SmartLens",
+  "description": "Scan anything, understand everything, and discover what to do next with AI-powered image recognition.",
+  "id": "/",
+  "start_url": "/#/scan",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["standalone", "browser"],
+  "orientation": "portrait-primary",
+  "background_color": "#f1f6f4",
+  "theme_color": "#0f9d76",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["education", "utilities", "photo"],
+  "icons": [
+    {
+      "src": "/assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "New scan",
+      "short_name": "Scan",
+      "url": "/#/scan",
+      "icons": [{ "src": "/assets/icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Scan history",
+      "short_name": "History",
+      "url": "/#/history",
+      "icons": [{ "src": "/assets/icons/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}

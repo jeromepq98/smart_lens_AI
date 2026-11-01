@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="SmartLens AI identifies plants, animals, food, electronics and everyday objects from a photo, then recommends what to do next." />
+    <meta name="theme-color" content="#0f9d76" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="SmartLens AI" />
+    <title>SmartLens AI</title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" href="/assets/icons/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="icon" href="/assets/icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
+    <link rel="stylesheet" href="/assets/vendor/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" />
+    <link rel="stylesheet" href="/assets/vendor/cropper/cropper.min.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#app" data-i18n="a11y.skip">Skip to main content</a>
+
+    <div id="offlineBanner" class="offline-banner" hidden>
+      <i class="bi bi-cloud-slash" aria-hidden="true"></i>
+      <span data-i18n="offline.banner">You are offline. Scans will be queued and analyzed when the connection returns.</span>
+    </div>
+
+    <header class="app-header">
+      <div class="container-xxl header-inner">
+        <a class="brand" href="#/scan" aria-label="SmartLens AI home">
+          <img id="brandLogo" src="/assets/icons/icon.svg" alt="" width="40" height="40" />
+          <span class="brand-text">
+            <strong id="brandTitle">SmartLens AI</strong>
+            <small id="brandTagline">Scan Anything. Understand Everything.</small>
+          </span>
+        </a>
+
+        <nav class="desktop-nav" aria-label="Main navigation">
+          <a href="#/scan" data-nav="scan" class="nav-link">
+            <i class="bi bi-camera" aria-hidden="true"></i><span data-i18n="nav.scan">Scanner</span>
+          </a>
+          <a href="#/history" data-nav="history" class="nav-link">
+            <i class="bi bi-clock-history" aria-hidden="true"></i><span data-i18n="nav.history">History</span>
+          </a>
+          <a href="#/favorites" data-nav="favorites" class="nav-link">
+            <i class="bi bi-heart" aria-hidden="true"></i><span data-i18n="nav.favorites">Favorites</span>
+          </a>
+          <a href="#/learning" data-nav="learning" class="nav-link">
+            <i class="bi bi-mortarboard" aria-hidden="true"></i><span data-i18n="nav.learning">Learning</span>
+          </a>
+          <a href="#/settings" data-nav="settings" class="nav-link">
+            <i class="bi bi-gear" aria-hidden="true"></i><span data-i18n="nav.settings">Settings</span>
+          </a>
+        </nav>
+
+        <div class="header-actions">
+          <button id="syncBadge" class="sync-badge" type="button" hidden>
+            <i class="bi bi-cloud-arrow-up" aria-hidden="true"></i>
+            <span id="syncBadgeCount">0</span>
+            <span class="visually-hidden" data-i18n="sync.pendingLabel">scans waiting to sync</span>
+          </button>
+          <select id="languageSelect" class="form-select form-select-sm language-select" aria-label="Language">
+            <option value="en">English</option>
+            <option value="fil">Filipino</option>
+            <option value="ceb">Cebuano</option>
+          </select>
+          <button id="themeToggle" class="icon-button" type="button" aria-label="Switch theme" title="Switch theme">
+            <i class="bi bi-moon-stars" aria-hidden="true"></i>
+          </button>
+          <button id="installButton" class="icon-button" type="button" aria-label="Install app" title="Install app" hidden>
+            <i class="bi bi-download" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div id="updateBanner" class="update-banner" hidden>
+      <span data-i18n="update.available">A new version of SmartLens AI is available.</span>
+      <button id="updateButton" class="btn btn-sm btn-light" type="button" data-i18n="update.reload">Update now</button>
+    </div>
+
+    <main id="app" class="app-main container-xxl" tabindex="-1">
+      <div class="boot-loader" aria-live="polite">
+        <div class="boot-logo"><img src="/assets/icons/icon.svg" alt="" width="56" height="56" /></div>
+        <p data-i18n="app.loading">Loading SmartLens AI…</p>
+      </div>
+    </main>
+
+    <footer class="app-footer container-xxl">
+      <p data-i18n="footer.disclaimer">AI identifications are estimates. Never eat, touch, or handle something based only on an AI result.</p>
+      <p class="footer-meta">
+        <span data-i18n="footer.version">Version</span> <span id="appVersion">1.0.0</span>
+        <span class="dot-sep" aria-hidden="true">•</span>
+        <a href="/admin" data-i18n="footer.admin">Administrator</a>
+      </p>
+    </footer>
+
+    <nav class="bottom-nav" aria-label="Primary navigation">
+      <a href="#/scan" data-nav="scan">
+        <i class="bi bi-camera" aria-hidden="true"></i><span data-i18n="nav.scan">Scanner</span>
+      </a>
+      <a href="#/history" data-nav="history">
+        <i class="bi bi-clock-history" aria-hidden="true"></i><span data-i18n="nav.history">History</span>
+      </a>
+      <a href="#/favorites" data-nav="favorites">
+        <i class="bi bi-heart" aria-hidden="true"></i><span data-i18n="nav.favorites">Favorites</span>
+      </a>
+      <a href="#/learning" data-nav="learning">
+        <i class="bi bi-mortarboard" aria-hidden="true"></i><span data-i18n="nav.learning">Learning</span>
+      </a>
+      <a href="#/settings" data-nav="settings">
+        <i class="bi bi-gear" aria-hidden="true"></i><span data-i18n="nav.settings">Settings</span>
+      </a>
+    </nav>
+
+    <div id="toastStack" class="toast-stack" aria-live="polite" aria-atomic="false"></div>
+    <div id="modalRoot"></div>
+
+    <noscript>
+      <div class="container py-5">
+        <div class="alert alert-warning">SmartLens AI needs JavaScript to run the camera, queue scans, and display results.</div>
+      </div>
+    </noscript>
+
+    <script src="/assets/vendor/bootstrap/bootstrap.bundle.min.js" defer></script>
+    <script src="/assets/vendor/cropper/cropper.min.js" defer></script>
+    <script src="/assets/vendor/jspdf/jspdf.umd.js" defer></script>
+    <script type="module" src="/js/app.js"></script>
+  </body>
+</html>
